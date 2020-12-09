@@ -31,6 +31,7 @@ Clone the repository
   ```
   git clone https://github.com/jalbrekt85/RedbubbleBot.git
   ```
+ Have a Redbubble account with at least 1 design already uploaded.
 
 ### Prerequisites
 
@@ -50,6 +51,12 @@ Clone the repository
 2. A small GUI will appear, select directories with your designs and click upload
 
 3. If this is your first time running the script, you will be prompted to login to redbubble. Login and the script will continue.
+
+The script will you your latest design that you've uploaded as a template for the designs it uploads. 
+This can be changed in `get_template_link()`
+
+Manually select a design as the template by copying the duplicate copy URL of the design:
+"https://www.redbubble.com/portfolio/images/12345678-artwork-title/duplicate"
 
 ## License and Copyright
 
