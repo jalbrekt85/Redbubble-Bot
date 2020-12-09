@@ -58,8 +58,8 @@ Clone the repository
 - The script will upload your latest design that you've uploaded as a template for the designs it uploads. 
 This can be changed in `get_template_link()`
 
-Manually select a design as the template by copying the duplicate copy URL of the design:
-"https://www.redbubble.com/portfolio/images/12345678-artwork-title/duplicate"
+- Manually select a design as the template by copying the duplicate copy URL of the design:
+  "https://www.redbubble.com/portfolio/images/12345678-artwork-title/duplicate"
 
 ## License and Copyright
 
