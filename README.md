@@ -44,15 +44,18 @@ Clone the repository
 
 ### Run the script
 
-1. Run
+- Run
    ```
    python uploader.py
    ```
-2. A small GUI will appear, select directories with your designs and click upload
+- Add a file 'tags.txt' to the directory with your images to specify the tags that will be uploaded with each image in that directory.
+  If a tags.txt isn't supplied, the tags will be generated from the image's filename
 
-3. If this is your first time running the script, you will be prompted to login to redbubble. Login and the script will continue.
+- A small GUI will appear, select directories with your images and click upload. 
 
-The script will upload your latest design that you've uploaded as a template for the designs it uploads. 
+- If this is your first time running the script, you will be prompted to login to redbubble. Login and the script will continue.
+
+- The script will upload your latest design that you've uploaded as a template for the designs it uploads. 
 This can be changed in `get_template_link()`
 
 Manually select a design as the template by copying the duplicate copy URL of the design:
