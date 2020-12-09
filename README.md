@@ -52,7 +52,7 @@ Clone the repository
 
 3. If this is your first time running the script, you will be prompted to login to redbubble. Login and the script will continue.
 
-The script will you your latest design that you've uploaded as a template for the designs it uploads. 
+The script will upload your latest design that you've uploaded as a template for the designs it uploads. 
 This can be changed in `get_template_link()`
 
 Manually select a design as the template by copying the duplicate copy URL of the design:
