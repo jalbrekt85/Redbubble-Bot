@@ -45,7 +45,9 @@ The webdriver and Chrome profile will automatically be created and saved upon ru
 
 3. If this is your first time running the script, you will be prompted to login to redbubble. Login and the script will continue.
 
+## License and Copyright
 
+Licensed under [MIT LICENSE](LICENSE)
 
 
 
