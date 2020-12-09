@@ -25,6 +25,12 @@ The webdriver and Chrome profile will automatically be created and saved upon ru
 
 <!-- GETTING STARTED -->
 
+## Getting Started
+
+Clone the repository
+  ```
+  git clone https://github.com/jalbrekt85/RedbubbleBot.git
+  ```
 
 ### Prerequisites
 
