@@ -79,30 +79,28 @@ class Bot:
             driver.get(template_link)
             
             element = driver.find_element_by_css_selector('#work_title_en')
-            element.send_keys(Keys.CONTROL, 'a')
-            element.send_keys(Keys.BACKSPACE)
+            element.clear()
             element.send_keys(design.title)
 
             element = driver.find_element_by_css_selector('#work_tag_field_en')
-            element.send_keys(Keys.CONTROL, 'a')
-            element.send_keys(Keys.BACKSPACE)
+            element.clear()
             element.send_keys(design.tags)
 
             element = driver.find_element_by_css_selector('#work_description_en')
-            element.send_keys(Keys.CONTROL, 'a')
-            element.send_keys(Keys.BACKSPACE)
+            element.clear()
             element.send_keys(design.desc)
 
             driver.find_element_by_css_selector('#add-new-work > div > div.duplicate > div.upload-button-wrapper.replace-all-images').click()
-            time.sleep(1.5)
+            time.sleep(0.5)
             pyautogui.typewrite(design.location)
-            time.sleep(1)
+            time.sleep(0.5)
             pyautogui.hotkey('ENTER')
             time.sleep(20)
 
             driver.find_element_by_css_selector('#rightsDeclaration').click()
             driver.find_element_by_css_selector('#submit-work').click()
-            time.sleep(30)
+            wait = WebDriverWait(driver, 9999)
+            wait.until(lambda driver: 'https://www.redbubble.com/studio/promote' in driver.current_url)
 
 def run_gui():
     bot = Bot()
