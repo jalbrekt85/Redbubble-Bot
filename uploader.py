@@ -27,7 +27,7 @@ def get_template_link(driver):
     soup = BeautifulSoup(html, 'html.parser')
     return soup.find('a', class_='works_work-menu-option works_work-menu-option__duplicate')['href']
 
-def create_driver(phone=False):
+def create_driver():
     chromedriver_autoinstaller.install()
     options = webdriver.ChromeOptions()
     options.add_argument('user-data-dir=' + os.getcwd() + '\\chrome_profile')
