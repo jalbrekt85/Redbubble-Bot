@@ -1,10 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import time
-from selenium.webdriver.common.keys import Keys
 import os
 import pyautogui
-import random
 from tkinter import filedialog
 from tkinter import messagebox
 from tkinter import *
