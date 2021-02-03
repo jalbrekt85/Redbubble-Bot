@@ -60,8 +60,9 @@ class Bot:
             wait = WebDriverWait(driver, 300)
                                                             # This should be the landing page after logging in
             wait.until(lambda driver: driver.current_url == "https://www.redbubble.com/explore/for-you/#" or driver.current_url == 'https://www.redbubble.com/portfolio/manage_works?ref=account-nav-dropdown')
+       
         template_link = get_template_link(driver)
-        
+        start = time.time()
         for design in self.designs:
             driver.get(template_link)
             
@@ -84,6 +85,8 @@ class Bot:
             element.click()
             wait = WebDriverWait(driver, 60)
             wait.until(lambda driver: 'https://www.redbubble.com/studio/promote' in driver.current_url)
+        print(f'Uploaded {len(self.designs)} in {round(time.time()-start, 2)} seconds')
+        driver.quit()
 
 def run_gui():
     bot = Bot()
