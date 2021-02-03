@@ -39,7 +39,7 @@ def create_driver(phone=False):
     return webdriver.Chrome(options=options)
 
 def is_image(file):
-    return file[-3:] == 'png' or file[-3:] == 'jpg' or file[-4:] == 'jpeg'
+    return file[-3:] == 'png' or file[-3:] == 'jpg'
     
 class Design:
     def __init__(self, location, tags):
@@ -57,7 +57,7 @@ class Bot:
         self.designs = []
 
     def add_designs(self, dir):
-        found_designs = [os.path.abspath(file) for file in os.listdir(dir) if is_image(file)]
+        found_designs = [f'{dir}/{file}' for file in os.listdir(dir) if is_image(file)]
         if os.path.exists(dir + '/tags.txt'):
             tags = open(dir + '/tags.txt', 'r').read()
         else:
