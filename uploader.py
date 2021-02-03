@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 import os
-import pyautogui
 from tkinter import filedialog
 from tkinter import messagebox
 from tkinter import *
@@ -82,11 +81,7 @@ class Bot:
             element.clear()
             element.send_keys(design.desc)
 
-            driver.find_element_by_css_selector('#add-new-work > div > div.duplicate > div.upload-button-wrapper.replace-all-images').click()
-            time.sleep(0.5)
-            pyautogui.typewrite(design.location)
-            time.sleep(0.5)
-            pyautogui.hotkey('ENTER')
+            driver.find_element_by_css_selector('#select-image-single').send_keys(design.location)
             time.sleep(20)
 
             driver.find_element_by_css_selector('#rightsDeclaration').click()
