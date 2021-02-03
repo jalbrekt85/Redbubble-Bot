@@ -23,9 +23,7 @@ def get_template_link(driver):
     
     # Automatic selection
     driver.get('https://www.redbubble.com/portfolio/manage_works?ref=account-nav-dropdown')
-    html = driver.page_source
-    soup = BeautifulSoup(html, 'html.parser')
-    return soup.find('a', class_='works_work-menu-option works_work-menu-option__duplicate')['href']
+    return BeautifulSoup(driver.page_source, 'html.parser').find('a', class_='works_work-menu-option works_work-menu-option__duplicate')['href']
 
 def create_driver():
     chromedriver_autoinstaller.install()
