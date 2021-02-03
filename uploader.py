@@ -72,7 +72,7 @@ class Bot:
             print('You must login into Redbubble. If you are using the same Chrome Profile, you only need to do this once\nOnce you login, the bot will automatically continue')
             wait = WebDriverWait(driver, 9999)
                                                             # This should be the landing page after logging in
-            wait.until(lambda driver: driver.current_url == "https://www.redbubble.com/explore/for-you/#")
+            wait.until(lambda driver: driver.current_url == "https://www.redbubble.com/explore/for-you/#" or driver.current_url == 'https://www.redbubble.com/portfolio/manage_works?ref=account-nav-dropdown')
         template_link = get_template_link(driver)
         
         for design in self.designs:
