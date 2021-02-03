@@ -57,14 +57,8 @@ class Bot:
         self.designs = []
 
     def add_designs(self, dir):
-        found_designs = [f'{dir}/{file}' for file in os.listdir(dir) if is_image(file)]
-        if os.path.exists(dir + '/tags.txt'):
-            tags = open(dir + '/tags.txt', 'r').read()
-        else:
-            tags = None
-        self.designs += [Design(file, tags) for file in found_designs]
-        random.shuffle(self.designs)
-        print(self.designs)
+        tags = open(dir + '/tags.txt', 'r').read() if os.path.exists(dir + '/tags.txt') else None
+        self.designs += [Design(f'{dir}/{file}', tags) for file in os.listdir(dir) if is_image(file)]
         
     def upload_designs(self):
         driver = create_driver()
