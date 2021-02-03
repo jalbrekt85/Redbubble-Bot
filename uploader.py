@@ -61,7 +61,7 @@ class Bot:
         driver = create_driver()
         if not is_logged_in(driver):
             print('You must login into Redbubble. If you are using the same Chrome Profile, you only need to do this once\nOnce you login, the bot will automatically continue')
-            wait = WebDriverWait(driver, 9999)
+            wait = WebDriverWait(driver, 300)
                                                             # This should be the landing page after logging in
             wait.until(lambda driver: driver.current_url == "https://www.redbubble.com/explore/for-you/#" or driver.current_url == 'https://www.redbubble.com/portfolio/manage_works?ref=account-nav-dropdown')
         template_link = get_template_link(driver)
@@ -82,11 +82,11 @@ class Bot:
             element.send_keys(design.desc)
 
             driver.find_element_by_css_selector('#select-image-single').send_keys(design.location)
-            time.sleep(20)
 
             driver.find_element_by_css_selector('#rightsDeclaration').click()
-            driver.find_element_by_css_selector('#submit-work').click()
-            wait = WebDriverWait(driver, 9999)
+            element = WebDriverWait(driver, 60).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#submit-work")))
+            element.click()
+            wait = WebDriverWait(driver, 60)
             wait.until(lambda driver: 'https://www.redbubble.com/studio/promote' in driver.current_url)
 
 def run_gui():
