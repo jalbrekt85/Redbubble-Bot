@@ -85,7 +85,7 @@ class Bot:
             element.click()
             wait = WebDriverWait(driver, 60)
             wait.until(lambda driver: 'https://www.redbubble.com/studio/promote' in driver.current_url)
-        print(f'Uploaded {len(self.designs)} Designs in {round((time.time()-start) / 60, 2)} Minutes')
+        print(f'Uploaded {len(self.designs)} Design(s) in {round((time.time()-start) / 60, 2)} Minutes')
         driver.quit()
 
 def run_gui():
