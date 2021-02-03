@@ -1,5 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 import time
 import os
 from tkinter import filedialog
@@ -29,10 +31,6 @@ def create_driver(phone=False):
     chromedriver_autoinstaller.install()
     options = webdriver.ChromeOptions()
     options.add_argument('user-data-dir=' + os.getcwd() + '\\chrome_profile')
-    
-    # Emulate phone driver for instagram
-    if phone:
-        options.add_experimental_option("mobileEmulation", {"deviceName": "Pixel 2"})
     return webdriver.Chrome(options=options)
 
 def is_image(file):
